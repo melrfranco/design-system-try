@@ -1,0 +1,322 @@
+/* Blueprint Design System v2 - Sample CSS */
+/* This is a sample design system showing the structure the app expects */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+/* ============================================================================
+   THEME TOKENS LAYER - Design system variables
+   ============================================================================ */
+@layer theme {
+  :root {
+    /* Foundation Colors */
+    --bp-color-white: #ffffff;
+    --bp-color-black: #000000;
+    
+    /* Neutral Palette */
+    --bp-color-gray-50: #f9fafb;
+    --bp-color-gray-100: #f3f4f6;
+    --bp-color-gray-200: #e5e7eb;
+    --bp-color-gray-300: #d1d5db;
+    --bp-color-gray-400: #9ca3af;
+    --bp-color-gray-500: #6b7280;
+    --bp-color-gray-600: #4b5563;
+    --bp-color-gray-700: #374151;
+    --bp-color-gray-800: #1f2937;
+    --bp-color-gray-900: #111827;
+    
+    /* Primary Brand Color */
+    --bp-color-primary-50: #f0f9ff;
+    --bp-color-primary-100: #e0f2fe;
+    --bp-color-primary-200: #bae6fd;
+    --bp-color-primary-300: #7dd3fc;
+    --bp-color-primary-400: #38bdf8;
+    --bp-color-primary-500: #0ea5e9;
+    --bp-color-primary-600: #0284c7;
+    --bp-color-primary-700: #0369a1;
+    --bp-color-primary-800: #075985;
+    --bp-color-primary-900: #0c3d66;
+    
+    /* Semantic Colors */
+    --bp-color-success: #10b981;
+    --bp-color-warning: #f59e0b;
+    --bp-color-error: #ef4444;
+    --bp-color-info: #3b82f6;
+    
+    /* Surfaces */
+    --bp-surface-bg: var(--bp-color-white);
+    --bp-surface-primary: var(--bp-color-gray-50);
+    --bp-surface-secondary: var(--bp-color-gray-100);
+    --bp-surface-tertiary: var(--bp-color-gray-200);
+    
+    /* Typography */
+    --bp-font-family-base: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --bp-font-size-xs: 0.75rem;
+    --bp-font-size-sm: 0.875rem;
+    --bp-font-size-base: 1rem;
+    --bp-font-size-lg: 1.125rem;
+    --bp-font-size-xl: 1.25rem;
+    --bp-font-size-2xl: 1.5rem;
+    --bp-font-size-3xl: 1.875rem;
+    --bp-font-weight-regular: 400;
+    --bp-font-weight-medium: 500;
+    --bp-font-weight-semibold: 600;
+    --bp-font-weight-bold: 700;
+    
+    /* Spacing */
+    --bp-spacing-2xs: 0.25rem;
+    --bp-spacing-xs: 0.5rem;
+    --bp-spacing-sm: 0.75rem;
+    --bp-spacing-md: 1rem;
+    --bp-spacing-lg: 1.5rem;
+    --bp-spacing-xl: 2rem;
+    --bp-spacing-2xl: 3rem;
+    
+    /* Border Radius */
+    --bp-radius-none: 0;
+    --bp-radius-sm: 0.25rem;
+    --bp-radius-base: 0.375rem;
+    --bp-radius-md: 0.5rem;
+    --bp-radius-lg: 0.75rem;
+    --bp-radius-xl: 1rem;
+    --bp-radius-full: 9999px;
+    
+    /* Shadows */
+    --bp-shadow-xs: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    --bp-shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+    --bp-shadow-base: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --bp-shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    --bp-shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  }
+
+  /* Dark mode overrides */
+  .dark {
+    --bp-surface-bg: var(--bp-color-gray-900);
+    --bp-surface-primary: var(--bp-color-gray-800);
+    --bp-surface-secondary: var(--bp-color-gray-700);
+    --bp-surface-tertiary: var(--bp-color-gray-600);
+  }
+}
+
+/* ============================================================================
+   BASE LAYER - HTML element defaults
+   ============================================================================ */
+@layer base {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html {
+    font-family: var(--bp-font-family-base);
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  body {
+    background-color: var(--bp-surface-bg);
+    color: var(--bp-color-gray-900);
+    line-height: 1.5;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: var(--bp-font-weight-semibold);
+    line-height: 1.2;
+  }
+
+  h1 {
+    font-size: var(--bp-font-size-3xl);
+  }
+
+  h2 {
+    font-size: var(--bp-font-size-2xl);
+  }
+
+  h3 {
+    font-size: var(--bp-font-size-xl);
+  }
+
+  p {
+    font-size: var(--bp-font-size-base);
+  }
+
+  a {
+    color: var(--bp-color-primary-600);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  a:hover {
+    color: var(--bp-color-primary-700);
+  }
+}
+
+/* ============================================================================
+   COMPONENTS LAYER - Reusable component styles
+   ============================================================================ */
+@layer components {
+  /* Buttons */
+  .bp-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--bp-spacing-sm) var(--bp-spacing-md);
+    font-size: var(--bp-font-size-sm);
+    font-weight: var(--bp-font-weight-medium);
+    border-radius: var(--bp-radius-md);
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s;
+    text-decoration: none;
+  }
+
+  .bp-btn-primary {
+    background-color: var(--bp-color-primary-600);
+    color: var(--bp-color-white);
+  }
+
+  .bp-btn-primary:hover {
+    background-color: var(--bp-color-primary-700);
+    box-shadow: var(--bp-shadow-md);
+  }
+
+  .bp-btn-secondary {
+    background-color: var(--bp-color-gray-100);
+    color: var(--bp-color-gray-900);
+  }
+
+  .bp-btn-secondary:hover {
+    background-color: var(--bp-color-gray-200);
+  }
+
+  /* Cards */
+  .bp-card {
+    background-color: var(--bp-surface-primary);
+    border-radius: var(--bp-radius-lg);
+    padding: var(--bp-spacing-lg);
+    box-shadow: var(--bp-shadow-base);
+    transition: box-shadow 0.2s, transform 0.2s;
+  }
+
+  .bp-card:hover {
+    box-shadow: var(--bp-shadow-md);
+    transform: translateY(-2px);
+  }
+
+  /* Inputs */
+  .bp-input {
+    width: 100%;
+    padding: var(--bp-spacing-sm) var(--bp-spacing-md);
+    font-size: var(--bp-font-size-base);
+    font-family: var(--bp-font-family-base);
+    border: 1px solid var(--bp-color-gray-300);
+    border-radius: var(--bp-radius-md);
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+
+  .bp-input:focus {
+    outline: none;
+    border-color: var(--bp-color-primary-500);
+    box-shadow: 0 0 0 3px rgba(6, 144, 255, 0.1);
+  }
+
+  .bp-input:disabled {
+    background-color: var(--bp-color-gray-100);
+    cursor: not-allowed;
+  }
+
+  /* Typography */
+  .bp-text-xs {
+    font-size: var(--bp-font-size-xs);
+  }
+
+  .bp-text-sm {
+    font-size: var(--bp-font-size-sm);
+  }
+
+  .bp-text-base {
+    font-size: var(--bp-font-size-base);
+  }
+
+  .bp-text-lg {
+    font-size: var(--bp-font-size-lg);
+  }
+
+  .bp-text-muted {
+    color: var(--bp-color-gray-600);
+  }
+
+  .bp-font-bold {
+    font-weight: var(--bp-font-weight-bold);
+  }
+
+  /* Layout */
+  .bp-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--bp-spacing-lg);
+  }
+
+  .bp-flex {
+    display: flex;
+  }
+
+  .bp-grid {
+    display: grid;
+    gap: var(--bp-spacing-md);
+  }
+}
+
+/* ============================================================================
+   DARK MODE - Dark theme component overrides
+   ============================================================================ */
+@layer components {
+  .dark {
+    background-color: var(--bp-surface-bg);
+    color: var(--bp-color-gray-100);
+  }
+
+  .dark .bp-card {
+    background-color: var(--bp-surface-primary);
+    color: var(--bp-color-gray-100);
+  }
+
+  .dark .bp-btn-secondary {
+    background-color: var(--bp-color-gray-800);
+    color: var(--bp-color-gray-100);
+  }
+
+  .dark .bp-btn-secondary:hover {
+    background-color: var(--bp-color-gray-700);
+  }
+
+  .dark .bp-input {
+    background-color: var(--bp-color-gray-800);
+    color: var(--bp-color-gray-100);
+    border-color: var(--bp-color-gray-700);
+  }
+
+  .dark .bp-input:focus {
+    border-color: var(--bp-color-primary-400);
+  }
+
+  .dark .bp-text-muted {
+    color: var(--bp-color-gray-400);
+  }
+}
+
+/* ============================================================================
+   UTILITIES LAYER - Single-purpose utility classes
+   ============================================================================ */
+@layer utilities {
+  .bp-m-0 { margin: 0; }
+  .bp-p-0 { padding: 0; }
+  .bp-hidden { display: none; }
+  .bp-visible { display: block; }
+  .bp-flex-center { display: flex; align-items: center; justify-content: center; }
+  .bp-w-full { width: 100%; }
+  .bp-h-full { height: 100%; }
+  .bp-rounded { border-radius: var(--bp-radius-md); }
+  .bp-shadow { box-shadow: var(--bp-shadow-base); }
+  .bp-gap-md { gap: var(--bp-spacing-md); }
+}
